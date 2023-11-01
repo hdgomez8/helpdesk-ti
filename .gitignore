@@ -1,2 +1,3 @@
 *.sql
 public/document
+config/settings.php
