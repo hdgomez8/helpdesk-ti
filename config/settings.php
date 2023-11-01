@@ -7,4 +7,5 @@ return [
     'DB_DATABASE' => 'ti-ticket-pruebas',
     'APP_DEBUG' => true,
     'DIRECCION_PROYECTO'=> 'http://192.168.1.128:8088/helpdesk-ti/',
+    'CORREO_ALERTA_GENERACION_TICKET'=> 'soporte01cmc@gmail.com',
 ];

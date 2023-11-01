@@ -6,6 +6,7 @@ include("class.smtp.php");
 /*TODO: llamada de las clases necesarias que se usaran en el envio del mail */
 require_once("../config/conexion.php");
 require_once("../Models/Ticket.php");
+$settings = require '../config/settings.php';
 
 class Email extends PHPMailer
 {
@@ -69,7 +70,8 @@ class Email extends PHPMailer
             $categoria = $row["cat_nom"];
             $correo = $row["usu_correo"];
         }
-
+        $settings = require '../config/settings.php';
+        $alerta_correo = $settings['CORREO_ALERTA_GENERACION_TICKET'];
         //TODO: IGual//
         $this->IsSMTP();
         $this->Host = 'smtp.gmail.com'; //Aqui el server
@@ -81,8 +83,7 @@ class Email extends PHPMailer
         $this->SMTPSecure = 'tls';
         $this->FromName = $this->tu_nombre = "Ticket Abierto " . $id;
         $this->CharSet = 'UTF8';
-        $this->addAddress("gerenciati@clinicamarcaribe.com");
-        // $this->addAddress("sistemas@clinicamarcaribe.com");
+        $this->addAddress($alerta_correo);
         $this->WordWrap = 50;
         $this->IsHTML(true);
         $this->Subject = "Ticket Abierto";
