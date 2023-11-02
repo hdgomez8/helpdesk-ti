@@ -174,21 +174,25 @@ function guardar(e) {
             var tick_id = $('#tick_id').val();
             /* TODO: enviar Email de alerta de asignacion */
             $.post("../../controller/email.php?op=ticket_asignado", { tick_id: tick_id }, function (data) {
-
             });
 
-            /* TODO: enviar Whaspp de alerta de asignacion */
-            $.post("../../controller/whatsapp.php?op=w_ticket_asignado", { tick_id: tick_id }, function (data) {
+            swal(
+                {
+                  title: "Correcto!",
+                  text: "Asignado Exitosamente",
+                  icon: "success",
+                },
+                function (result) {
+                  console.log(result); // Imprimir el resultado en la consola
+                  if (result) {
+                    $("#modalasignar").modal('hide');
+                    var dir_proyecto = document.getElementById("dir_proyecto").value;
+                    window.location.href =
+                    dir_proyecto + "view/ConsultarTicket/";
+                  }
+                }
+              );
 
-            });
-
-            /* TODO: Alerta de confirmacion */
-            swal("Correcto!", "Asignado Correctamente", "success");
-
-            /* TODO: Ocultar Modal */
-            $("#modalasignar").modal('hide');
-            /* TODO:Recargar Datatable JS */
-            $('#ticket_data').DataTable().ajax.reload();
         }
     });
 }
