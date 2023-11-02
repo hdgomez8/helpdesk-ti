@@ -284,6 +284,7 @@ function listardatatable(tick_titulo, cat_id, prio_id) {
         "bInfo": true,
         "iDisplayLength": 10,
         "autoWidth": false,
+        "order": [[0, "desc"]],
         "language": {
             "sProcessing": "Procesando...",
             "sLengthMenu": "Mostrar _MENU_ registros",
