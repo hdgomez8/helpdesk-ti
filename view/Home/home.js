@@ -22,6 +22,7 @@ $(document).ready(function(){
             $('#lbltotalcerrado').html(data.TOTAL);
         });
 
+
         $.post("../../controller/usuario.php?op=grafico", {usu_id:usu_id},function (data) {
             data = JSON.parse(data);
 
@@ -49,6 +50,37 @@ $(document).ready(function(){
         $.post("../../controller/ticket.php?op=totalcerrado", function (data) {
             data = JSON.parse(data);
             $('#lbltotalcerrado').html(data.TOTAL);
+        });
+
+        
+        $.post("../../controller/ticket.php?op=soporte1", function (data) {
+            data = JSON.parse(data);
+            $('#soporte1').html(data.TOTAL);
+        });
+
+        $.post("../../controller/ticket.php?op=soporte2", function (data) {
+            data = JSON.parse(data);
+            $('#soporte2').html(data.TOTAL);
+        });
+
+        $.post("../../controller/ticket.php?op=soporte3", function (data) {
+            data = JSON.parse(data);
+            $('#soporte3').html(data.TOTAL);
+        });
+
+        $.post("../../controller/ticket.php?op=soporte4", function (data) {
+            data = JSON.parse(data);
+            $('#soporte4').html(data.TOTAL);
+        });
+
+        $.post("../../controller/ticket.php?op=soporte5", function (data) {
+            data = JSON.parse(data);
+            $('#soporte5').html(data.TOTAL);
+        });
+
+        $.post("../../controller/ticket.php?op=soporte6", function (data) {
+            data = JSON.parse(data);
+            $('#soporte6').html(data.TOTAL);
         });
 
         $.post("../../controller/ticket.php?op=grafico",function (data) {
