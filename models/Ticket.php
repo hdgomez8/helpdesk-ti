@@ -3,7 +3,7 @@ class Ticket extends Conectar
 {
 
     /* TODO: insertar nuevo ticket */
-    public function insert_ticket($usu_id,$emp_id, $cat_id, $cats_id, $tick_titulo, $tick_descrip, $prio_id)
+    public function insert_ticket($usu_id, $emp_id, $cat_id, $cats_id, $tick_titulo, $tick_descrip, $prio_id)
     {
         $conectar = parent::conexion();
         parent::set_names();
@@ -317,6 +317,68 @@ class Ticket extends Conectar
         $conectar = parent::conexion();
         parent::set_names();
         $sql = "SELECT COUNT(*) as TOTAL FROM tm_ticket where tick_estado='Cerrado'";
+        $sql = $conectar->prepare($sql);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
+
+    /* TODO: Total de ticket Pendiente soporte1 */
+    public function get_ticket_pendiente_soporte1()
+    {
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql = "SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_asig=601 and tick_estado = 'Abierto'";
+        $sql = $conectar->prepare($sql);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
+
+    /* TODO: Total de ticket Pendiente soporte2 */
+    public function get_ticket_pendiente_soporte2()
+    {
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql = "SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_asig=4 and tick_estado = 'Abierto'";
+        $sql = $conectar->prepare($sql);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
+    /* TODO: Total de ticket Pendiente soporte3 */
+    public function get_ticket_pendiente_soporte3()
+    {
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql = "SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_asig=9 and tick_estado = 'Abierto'";
+        $sql = $conectar->prepare($sql);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
+    /* TODO: Total de ticket Pendiente soporte4 */
+    public function get_ticket_pendiente_soporte4()
+    {
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql = "SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_asig=3 and tick_estado = 'Abierto'";
+        $sql = $conectar->prepare($sql);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
+    /* TODO: Total de ticket Pendiente soporte5 */
+    public function get_ticket_pendiente_soporte5()
+    {
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql = "SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_asig=11 and tick_estado = 'Abierto'";
+        $sql = $conectar->prepare($sql);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
+    /* TODO: Total de ticket Pendiente soporte6 */
+    public function get_ticket_pendiente_soporte6()
+    {
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql = "SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_asig=10 and tick_estado = 'Abierto'";
         $sql = $conectar->prepare($sql);
         $sql->execute();
         return $resultado = $sql->fetchAll();
