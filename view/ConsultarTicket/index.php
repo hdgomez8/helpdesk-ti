@@ -1,5 +1,6 @@
 <?php
 require_once("../../config/conexion.php");
+$dir_proyecto = $settings['DIRECCION_PROYECTO'];
 if (isset($_SESSION["usu_id"])) {
 ?>
 	<!DOCTYPE html>
@@ -28,6 +29,7 @@ if (isset($_SESSION["usu_id"])) {
 								<ol class="breadcrumb breadcrumb-simple">
 									<li><a href="../Home/index.php">Inicio</a></li>
 									<li class="active">Consultar Solicitud</li>
+									<input type="hidden" id="dir_proyecto" value="<?php echo $dir_proyecto; ?>">
 								</ol>
 							</div>
 						</div>
