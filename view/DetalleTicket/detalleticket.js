@@ -190,12 +190,21 @@ $(document).on("click","#btncerrarticket", function(){
             listardetalle(tick_id);
 
             /* TODO: Alerta de confirmacion */
-            swal({
-                title: "HelpDesk!",
-                text: "Ticket Cerrado correctamente.",
-                type: "success",
-                confirmButtonClass: "btn-success"
-            });
+            swal(
+                {
+                  title: "HelpDesk!",
+                  text: "Ticket Cerrado correctamente.",
+                  type: "success",
+                  confirmButtonClass: "btn-success",
+                },
+                function (result) {
+                  if (result) {
+                    var dir_proyecto = document.getElementById("dir_proyecto").value;
+                    window.location.href =
+                      dir_proyecto + "view/ConsultarTicket/";
+                  }
+                }
+              ); 
         }
     });
 });
