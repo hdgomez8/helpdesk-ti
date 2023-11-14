@@ -186,9 +186,6 @@ $(document).on("click","#btncerrarticket", function(){
 
             });
 
-            /* TODO:Llamamos a funcion listardetalle */
-            listardetalle(tick_id);
-
             /* TODO: Alerta de confirmacion */
             swal(
                 {
