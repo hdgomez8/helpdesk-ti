@@ -38,7 +38,7 @@ if (isset($_SESSION["usu_id"])) {
 
 				<div class="box-typical box-typical-padding">
 
-					<div class="row" id="viewuser">
+					<div class="row" id="viewuser" style="display: none;">
 						<div class="col-lg-3">
 							<fieldset class="form-group">
 								<label class="form-label" for="tick_titulo">Asunto</label>
